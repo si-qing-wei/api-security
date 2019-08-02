@@ -1,0 +1,48 @@
+#全局密钥配置，所以加密算法统一密钥
+api:
+  encrypt:
+    key: d7b85c6e414dbcda
+#此配置的公司钥信息为测试数据，不能直接使用，请自行重新生成公私钥
+rsa:
+#  publicKey: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCcZlkHaSN0fw3CWGgzcuPeOKPdNKHdc2nR6KLXazhhzFhe78NqMrhsyNTf3651acS2lADK3CzASzH4T0bT+GnJ77joDOP+0SqubHKwAIv850lT0QxS+deuUHg2+uHYhdhIw5NCmZ0SkNalw8igP1yS+2TEIYan3lakPBvZISqRswIDAQAB
+#  privateKey: MIICeAIBADANBgkqhkiG9w0BAQeFAcSCAmIwggJeAgEAAoGBAJxmWQdpI3R/DcJYaDNy4944o900od1zadHootdrOGHMWF7vw2oyuGzI1N/frmxoVLaUAMrcLMBLMfhPRtP4acnvuOgM4/7RKq5scrAAi/znSVPRDFL5165QeDb64diF2EjDk0KZnRKQ1qXDyKA/XJL7ZMQhhqfeVqQ8G9khKpGzAgMBAAECgYEAj+5AkGlZj6Q9bVUez/ozahaF9tSxAbNs9xg4hDbQNHByAyxzkhALWVGZVk3rnyiEjWG3OPlW1cBdxD5w2DIMZ6oeyNPA4nehYrf42duk6AI//vd3GsdJa6Dtf2has1R+0uFrq9MRhfRunAf0w6Z9zNbiPNSd9VzKjjSvcX7OTsECQQD20kekMToC6LZaZPr1p05TLUTzXHvTcCllSeXWLsjVyn0AAME17FJRcL9VXQuSUK7PQ5Lf5+OpjrCRYsIvuZg9AkEAojdC6k3SqGnbtftLfGHMDn1fe0nTJmL05emwXgJvwToUBdytvgbTtqs0MsnuaOxMIMrBtpbhS6JiB5Idb7GArwJAfKTkmP5jFWT/8dZdBgFfhJGv6FakEjrqLMSM1QT7VzvStFWtPNYDHC2b8jfyyAkGvpSZb4ljZxUwBbuh5QgM4QJBAJDrV7+lOP62W9APqdd8M2X6gbPON3JC09EW3jaObLKupTa7eQicZsX5249IMdLQ0A43tanez3XXo0ZqNhwT8wcCQQDUubpNLwgAwN2X7kW1btQtvZW47o9CbCv+zFKJYms5WLrVpotjkrCgPeuloDAjxeHNARX8ZTVDxls6KrjLH3lT
+  publicKey: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCQQ7o/PBv3wrKplRMOtbq/Oj+06McCb0LeNUKN8XfVMocROunu4YEQ+6joo+D8Va5c+D4ZBb7tr0E/Z2XGsAkMmEOJfL6eL+PIlZhvwVniXqxJglkbf5fJ7OPS3qI9Ta6K15/PaSY3kShRTnDOSgs9SRoe060zpI9+Y1Cu74x60QIDAQAB
+  privateKey: MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAJBDuj88G/fCsqmVEw61ur86P7ToxwJvQt41Qo3xd9UyhxE66e7hgRD7qOij4PxVrlz4PhkFvu2vQT9nZcawCQyYQ4l8vp4v48iVmG/BWeJerEmCWRt/l8ns49Leoj1NrorXn89pJjeRKFFOcM5KCz1JGh7TrTOkj35jUK7vjHrRAgMBAAECgYB4nTd1MQNNFSoc4HdLgCL/SGsFDO1+Gpm0gKEBXdZLmHAWtsPpJf6rvUxOHN24+sXKEv6QGx6zSChsIz2TbZBSAA3VoCxCFrkJ/b0LOu83RKqoQKQahYVWJDjJd8E2wdub3ieP+xtDsUxLetkxoQXdbKRA6FdBQxQX92CtAiE+8QJBAOy01oA1msHgh3ItCCHQKztb+WbvFd1vlzl3pJhsZDAMti2JPU1JW7bSUcuYztX+gK96ZLp7EO/KVMCCIJkuFEUCQQCcBfrp8zR7hh9ENothDQGGAhVJyu9rUPRhoyUoCgoyNg9bV5LNRr+29WhTMupPmHIApCdPtG8ME5uEVQ0BH+MdAkEAjyV5hsVkFpVDNAAZp+EtE9O2StKRhX1jlaRODMOX/xrg3T7erKuNZE1im96ITw9/IR/CZKfiATF5+YV4U0pzhQJAINAlKAStGfloI/lwsLWCh4NypLVYSvKYotwj2VrbMBoseqJdTmy9ryXHjg/cNWczOq1LUzj4Tcrl3xvgA0eIhQJBAL+sN6ULcBa1RjFBVP35w85RFFve6tms9hgQwOSYr+vqQojoHD9zbXVZ8qG1YfeI8tDmRWB2X4VbB7lf4eYltiw=
+
+spring:
+  datasource:
+    name: mysql_test
+    type: com.alibaba.druid.pool.DruidDataSource
+    #druid相关配置
+    druid:
+      #监控统计拦截的filters
+      filters: stat
+      driver-class-name: com.mysql.jdbc.Driver
+      #基本属性
+      url: jdbc:mysql://localhost:3306/test1?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+      username: root
+      password: 123456
+      #配置初始化大小/最小/最大
+      initial-size: 1
+      min-idle: 1
+      max-active: 20
+      #获取连接等待超时时间
+      max-wait: 60000
+      #间隔多久进行一次检测，检测需要关闭的空闲连接
+      time-between-eviction-runs-millis: 60000
+      #一个连接在池中最小生存的时间
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 'x'
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      #打开PSCache，并指定每个连接上PSCache的大小。oracle设为true，mysql设为false。分库分表较多推荐设置为false
+      pool-prepared-statements: false
+      max-pool-prepared-statement-per-connection-size: 20
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+## 该配置节点为独立的节点，有很多同学容易将这个配置放在spring的节点下，导致配置无法被识别
+mybatis:
+  mapper-locations: classpath:mapper/*.xml  #注意：一定要对应mapper映射xml文件的所在路径
+  type-aliases-package: com.example.apisecurity.model  # 注意：对应实体类的路径
