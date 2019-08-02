@@ -17,7 +17,15 @@ public class SingleResult<T> {
     }
 
     public static <T> SingleResult<T> buildSuccess(T data) {
-        return new SingleResult(0, "成功", data);
+        return new SingleResult(Code.SUCCESS, "成功", data);
+    }
+
+    public static <T> SingleResult<T> buildFailure() {
+        return new SingleResult<>(Code.ERROR, "服务端出错", null);
+    }
+
+    public static <T> SingleResult<T> buildFailure(Integer code, String message) {
+        return new SingleResult<>(code, message, null);
     }
 
     public Integer getCode() {
